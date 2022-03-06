@@ -1,0 +1,50 @@
+# let's write some code
+
+# v:1
+# g:2
+
+# ---
+
+courses:
+  course_name: "Django back end developer"
+  version: 1.5
+  # price is a variable
+  price: &price 199
+  is_public: true
+  # yy-mm-dd time
+  release_date: 2021-04-25 12:23:22
+  pre_enroll: null
+  tags:
+   - python
+   - web dev
+   - mysql
+  course_ta: ["nikita","amit","hitesh"] 
+  ta_details:
+   - name: "nikita"
+     email: "123@gmail.com"
+     role: "content admin"
+   - name: "amit"
+     email: "amit@gmail.com"
+     role: "teacher"
+   - {name: "hitesh", email: "hello@gmail.com", role: "ta"}
+  # single line
+  short_desc: >
+   here is a short 
+   description for django course
+  # all follows i.e. multiline and indentation
+  long_desc: |
+   here is a long 
+   description for web dev course.
+    bye
+  process_payment: *price
+
+  # adv referrence
+  adv: &adv
+   mykey: myval
+  
+  # another obj
+  another_adv:
+   one: two
+  #  this means copying all the elements of adv into this
+   <<: *adv
+
